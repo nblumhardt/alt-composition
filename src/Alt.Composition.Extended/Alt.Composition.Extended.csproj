@@ -7,7 +7,7 @@
     <ProjectGuid>{DE12F468-DF9D-488B-99C4-DDBB6223F483}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Alt.Composition.Extended</RootNamespace>
+    <RootNamespace>Alt.Composition</RootNamespace>
     <AssemblyName>Alt.Composition.Extended</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -70,6 +70,7 @@
     <None Include="..\..\Alt.Composition.snk">
       <Link>Alt.Composition.snk</Link>
     </None>
+    <None Include="Alt.Composition.Extended.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

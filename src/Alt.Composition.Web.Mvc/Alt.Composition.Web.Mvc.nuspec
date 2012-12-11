@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Alt.Composition.Web.Mvc</id>
+    <version>0.0.0</version>
+    <authors>Alt.Composition Contributors</authors>
+    <description>Provides dependency injection into ASP.NET MVC controllers, filter attributes and model binders.</description>
+    <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
+    <licenseUrl>https://github.com/nblumhardt/alt-composition</licenseUrl>
+    <dependencies>
+      <dependency id="Microsoft.Composition" version="1.0.0" />
+      <dependency id="Microsoft.AspNet.Mvc" version="4.0.0" />
+      <dependency id="Alt.Composition.Extended" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Alt.Composition.Web.Mvc.dll" target="lib" />
+  </files>
+</package>

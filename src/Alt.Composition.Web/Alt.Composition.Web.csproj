@@ -7,7 +7,7 @@
     <ProjectGuid>{A9CF79A9-1BB0-419D-BE6F-4679BE4B1A6A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Alt.Composition.Web</RootNamespace>
+    <RootNamespace>Alt.Composition</RootNamespace>
     <AssemblyName>Alt.Composition.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -70,6 +70,7 @@
     <None Include="..\..\Alt.Composition.snk">
       <Link>Alt.Composition.snk</Link>
     </None>
+    <None Include="Alt.Composition.Web.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

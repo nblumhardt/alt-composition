@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Alt.Composition.Web.Http</id>
+    <version>0.0.0</version>
+    <authors>Alt.Composition Contributors</authors>
+    <description>Provides dependency injection for ASP.NET Web API controllers.</description>
+    <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
+    <licenseUrl>https://github.com/nblumhardt/alt-composition</licenseUrl>
+    <dependencies>
+      <dependency id="Microsoft.Composition" version="1.0.0" />
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="4.0.0" />
+      <dependency id="Alt.Composition.Extended" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Alt.Composition.Web.Http.dll" target="lib" />
+  </files>
+</package>

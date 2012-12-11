@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Alt.Composition.Settings</id>
+    <version>0.0.0</version>
+    <authors>Alt.Composition Contributors</authors>
+    <description>Allows parts written for System.Composition to consume settings from *.config files.</description>
+    <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
+    <licenseUrl>https://github.com/nblumhardt/alt-composition</licenseUrl>
+    <dependencies>
+      <dependency id="Microsoft.Composition" version="1.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Alt.Composition.Settings.dll" target="lib" />
+  </files>
+</package>
