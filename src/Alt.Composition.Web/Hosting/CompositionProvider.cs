@@ -11,15 +11,27 @@ namespace Alt.Composition.Hosting
 {
     class CompositionProvider
     {
+        static readonly object _initLock = new object();
         static readonly IList<Assembly> _partAssemblies = new List<Assembly>();
+        static bool _isInitialized;
 
         public static void CompleteInitialization()
         {
+            Assembly[] partsAssemblies;
+
+            lock (_initLock)
+            {
+                if (_isInitialized)
+                    return;
+
+                _isInitialized = true;
+
+                partsAssemblies = _partAssemblies.Union(FindWebApplicationAssemblies()).ToArray();
+            }
+
             var conventions = new ConventionBuilder();
             conventions.ForTypesUnderNamespace("Parts").Export().ExportInterfaces();
             conventions.AddDefaultMvcConventions();
-
-            var partsAssemblies = _partAssemblies.Union(FindWebApplicationAssemblies());
 
             var container = new ContainerConfiguration()
                 .WithDefaultConventions(conventions)
@@ -27,7 +39,7 @@ namespace Alt.Composition.Hosting
                 .WithApplicationSettings()
                 .CreateContainer();
 
-            MvcCompositionProvider.Initialize(container);
+            MvcCompositionProvider.Initialize(container);            
         }
 
         private static IEnumerable<Assembly> FindWebApplicationAssemblies()
@@ -72,7 +84,10 @@ namespace Alt.Composition.Hosting
         {
             if (assembly == null) throw new ArgumentNullException("assembly");
 
-            _partAssemblies.Add(assembly);
+            lock (_initLock)
+            {
+                _partAssemblies.Add(assembly);
+            }
         }
     }
 }

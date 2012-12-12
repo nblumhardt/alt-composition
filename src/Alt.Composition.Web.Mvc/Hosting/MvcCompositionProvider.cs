@@ -15,6 +15,7 @@ namespace Alt.Composition.Hosting
     {
         static CompositionContext _applicationContext;
         static ExportFactory<CompositionContext> _requestContextFactory; 
+        static readonly object _initLock = new object();
         
         /// <summary>
         /// Initialize the composition provider.
@@ -23,9 +24,12 @@ namespace Alt.Composition.Hosting
         public static void Initialize(CompositionContext applicationContext)
         {
             if (applicationContext == null) throw new ArgumentNullException("applicationContext");
-            if (_applicationContext != null) throw new InvalidOperationException("Composition provider is already initialized.");
 
-            _applicationContext = applicationContext;
+            lock (_initLock)
+            {
+                if (_applicationContext != null) throw new InvalidOperationException("Composition provider is already initialized.");
+                _applicationContext = applicationContext;
+            }
 
             var rcfContract = new CompositionContract(
                 typeof(ExportFactory<CompositionContext>),
