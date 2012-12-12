@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="Boundaries.cs" />
     <Compile Include="Convention\ExtendedConventions.cs" />
+    <Compile Include="EagerlyConstructedAttribute.cs" />
+    <Compile Include="Hosting\ExtendedHosting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

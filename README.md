@@ -78,13 +78,26 @@ Alt.Composition.Extended
 
 Simple additions to the System.Composition API.
 
+*Eager construction:*
+
+Parts marked with _EagerlyConstructedAttribute_ can be started at container creation time:
+
+	[EagerlyConstructed]
+	public class SomePart { }
+
+Requires a convention to be applied:
+
+	var conventions = new ConventionBuilder();
+	conventions.SupportEagerConstruction();
+
+When the container is created:
+
+	var container = ...
+	container.ConstructEagerParts();
+
 License and Credits
 -------------------
 
-Available for commercial and open-source projects under MS-PL, see http://opensource.org/licenses/MS-PL.
-
-Draws from many of the samples published by Microsoft at http://mef.codeplex.com.
-
-Thanks are owing to the MEF team for putting out a great product, and to the awesome crew at Readify for pushing me get this project together covering some of the remaining gaps.
+Available for commercial and open-source projects under MS-PL, see http://opensource.org/licenses/MS-PL. Draws from many of the samples published by Microsoft at http://mef.codeplex.com.
 
 Copyright (c) 2012 Nicholas Blumhardt.
