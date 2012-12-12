@@ -15,6 +15,6 @@
     </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="bin\Release\Alt.Composition.Settings.dll" target="lib" />
+    <file src="src\Alt.Composition.Settings\bin\Release\Alt.Composition.Settings.dll" target="lib" />
   </files>
 </package>
