@@ -12,6 +12,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="src\Alt.Composition.Extended\bin\Release\Alt.Composition.Exended.dll" target="lib" />
+    <file src="src\Alt.Composition.Extended\bin\Release\Alt.Composition.Extended.dll" target="lib" />
   </files>
 </package>
