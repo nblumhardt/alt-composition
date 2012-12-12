@@ -48,29 +48,23 @@ Provides a controller factory, and eventually other integration points, with ASP
 
 *Getting started:*
 
-1. Install the package
+(1.) Install the package
 
-2. Create conventions and ensure they register MVC controllers. The _AddDefaultMvcConventions()_ extension method helps with this:
-
+(2.) Create conventions and ensure they register MVC controllers. The _AddDefaultMvcConventions()_ extension method helps with this:
 
 	var conventions = new ConventionBuilder();
 	conventions.AddDefaultMvcConventions();
 
-
-3. Create a container, including the conventions and your MVC app's assembly:
-
+(3.) Create a container, including the conventions and your MVC app's assembly:
 
 	var container = new ContainerConfiguration()
 		.WithDefaultConventions(conventions)
 		.WithAssembly(typeof(MvcApplication).Assembly)
 		.CreateContainer();
 
-
-4. Initialize the MvcCompositionProvider:
-
+(4.) Initialize the MvcCompositionProvider:
 
 	MvcCompositionProvider.Initialize(container);
-
 
 Controllers will now be dependency injected using the container configured in (3).
 
