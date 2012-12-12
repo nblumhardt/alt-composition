@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Composition.Hosting;
-namespace Alt.Composition.Settings
+
+namespace Alt.Composition.Hosting
 {
     /// <summary>
     /// Extension methods provided by this library.

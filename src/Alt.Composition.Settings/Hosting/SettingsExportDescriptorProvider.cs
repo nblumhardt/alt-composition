@@ -4,7 +4,7 @@ using System.Composition.Hosting.Core;
 using System.Configuration;
 using System.Linq;
 
-namespace Alt.Composition.Settings
+namespace Alt.Composition.Hosting
 {
     class SettingsExportDescriptorProvider : ExportDescriptorProvider
     {

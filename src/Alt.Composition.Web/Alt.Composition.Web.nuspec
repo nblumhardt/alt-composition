@@ -7,16 +7,16 @@
     <description>Implements an opinionated 'parts folder' model out of the box for
                  ASP.NET MVC and WebAPI applications.</description>
     <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
-    <licenseUrl>https://github.com/nblumhardt/alt-composition</licenseUrl>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
       <dependency id="Alt.Composition.Web.Mvc" />
       <dependency id="Alt.Composition.Extended" />
-      <dependency id="Alt.Composition.Web.Http" />
       <dependency id="Alt.Composition.Settings" />
     </dependencies>
+    <tags>MEF Composition IoC Dependency Injection</tags>
   </metadata>
   <files>
-    <file src="src\Alt.Composition.Web\bin\Release\Alt.Composition.Web.dll" target="lib" />
+    <file src="src\Alt.Composition.Web\bin\Release\Alt.Composition.Web.dll" target="lib\net45" />
   </files>
 </package>

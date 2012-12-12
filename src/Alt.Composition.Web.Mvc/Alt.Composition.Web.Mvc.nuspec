@@ -6,14 +6,15 @@
     <authors>Alt.Composition Contributors</authors>
     <description>Provides dependency injection into ASP.NET MVC controllers, filter attributes and model binders.</description>
     <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
-    <licenseUrl>https://github.com/nblumhardt/alt-composition</licenseUrl>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
       <dependency id="Microsoft.AspNet.Mvc" version="4.0.0" />
       <dependency id="Alt.Composition.Extended" />
     </dependencies>
+    <tags>MEF Composition IoC Dependency Injection</tags>
   </metadata>
   <files>
-    <file src="src\Alt.Composition.Web.Mvc\bin\Release\Alt.Composition.Web.Mvc.dll" target="lib" />
+    <file src="src\Alt.Composition.Web.Mvc\bin\Release\Alt.Composition.Web.Mvc.dll" target="lib\net45" />
   </files>
 </package>

@@ -40,6 +40,10 @@
     <AssemblyOriginatorKeyFile>..\..\Alt.Composition.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Composition.AttributedModel">
       <HintPath>..\..\packages\Microsoft.Composition.1.0.16\lib\net45\System.Composition.AttributedModel.dll</HintPath>
@@ -57,6 +61,7 @@
       <HintPath>..\..\packages\Microsoft.Composition.1.0.16\lib\net45\System.Composition.TypedParts.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,6 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hosting\CompositionProvider.cs" />
+    <Compile Include="Internal\DefaultInitializationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +79,20 @@
     </None>
     <None Include="Alt.Composition.Web.nuspec" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alt.Composition.Extended\Alt.Composition.Extended.csproj">
+      <Project>{DE12F468-DF9D-488B-99C4-DDBB6223F483}</Project>
+      <Name>Alt.Composition.Extended</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alt.Composition.Settings\Alt.Composition.Settings.csproj">
+      <Project>{55458404-d74f-4576-ad9c-57b9f40884a5}</Project>
+      <Name>Alt.Composition.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alt.Composition.Web.Mvc\Alt.Composition.Web.Mvc.csproj">
+      <Project>{DCA35186-2B8A-4DFF-8DD3-529F08C19113}</Project>
+      <Name>Alt.Composition.Web.Mvc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

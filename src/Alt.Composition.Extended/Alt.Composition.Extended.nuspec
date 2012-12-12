@@ -6,12 +6,13 @@
     <authors>Alt.Composition Contributors</authors>
     <description>Enhances the API of System.Composition with convenience methods.</description>
     <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
-    <licenseUrl>https://github.com/nblumhardt/alt-composition</licenseUrl>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
     </dependencies>
+    <tags>MEF Composition IoC Dependency Injection</tags>
   </metadata>
   <files>
-    <file src="src\Alt.Composition.Extended\bin\Release\Alt.Composition.Extended.dll" target="lib" />
+    <file src="src\Alt.Composition.Extended\bin\Release\Alt.Composition.Extended.dll" target="lib\net45" />
   </files>
 </package>

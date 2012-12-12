@@ -65,8 +65,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Settings\SettingsExportDescriptorProvider.cs" />
-    <Compile Include="Settings\SettingsExtensions.cs" />
+    <Compile Include="Hosting\SettingsExportDescriptorProvider.cs" />
+    <Compile Include="Hosting\SettingsExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SettingAttribute.cs" />
   </ItemGroup>

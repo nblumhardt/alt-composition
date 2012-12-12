@@ -6,15 +6,16 @@
     <authors>Alt.Composition Contributors</authors>
     <description>Allows parts written for System.Composition to consume settings from *.config files.</description>
     <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
-    <licenseUrl>https://github.com/nblumhardt/alt-composition</licenseUrl>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Configuration" targetFramework="net45" />
     </frameworkAssemblies>
+    <tags>MEF Composition IoC Dependency Injection</tags>
   </metadata>
   <files>
-    <file src="src\Alt.Composition.Settings\bin\Release\Alt.Composition.Settings.dll" target="lib" />
+    <file src="src\Alt.Composition.Settings\bin\Release\Alt.Composition.Settings.dll" target="lib\net45" />
   </files>
 </package>

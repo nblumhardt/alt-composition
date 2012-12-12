@@ -61,6 +61,7 @@
       <HintPath>..\..\packages\Microsoft.Composition.1.0.16\lib\net45\System.Composition.TypedParts.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
@@ -92,7 +93,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hosting\MvcCompositionProvider.cs" />
+    <Compile Include="Convention\MvcConventions.cs" />
+    <Compile Include="Internal\ComposedDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Internal\RequestContextDisposalModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Alt.Composition.snk">
@@ -100,6 +105,12 @@
     </None>
     <None Include="Alt.Composition.Web.Mvc.nuspec" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alt.Composition.Extended\Alt.Composition.Extended.csproj">
+      <Project>{DE12F468-DF9D-488B-99C4-DDBB6223F483}</Project>
+      <Name>Alt.Composition.Extended</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
