@@ -56,6 +56,7 @@
     <Reference Include="System.Composition.TypedParts">
       <HintPath>..\..\packages\Microsoft.Composition.1.0.16\lib\net45\System.Composition.TypedParts.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,8 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Settings\SettingsExportDescriptorProvider.cs" />
+    <Compile Include="Settings\SettingsExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Alt.Composition.snk">

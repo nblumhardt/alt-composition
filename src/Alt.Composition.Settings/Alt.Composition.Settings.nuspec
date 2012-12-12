@@ -10,6 +10,9 @@
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
     </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework="net45" />
+    </frameworkAssemblies>
   </metadata>
   <files>
     <file src="bin\Release\Alt.Composition.Settings.dll" target="lib" />
