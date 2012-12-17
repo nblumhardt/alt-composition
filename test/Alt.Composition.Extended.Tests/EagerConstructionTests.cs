@@ -28,8 +28,9 @@ namespace Alt.Composition.Extended.Tests
         [TestMethod]
         public void TypesMarkedWithEagerlyConstructedAttributeAreConstructedEagerly()
         {
-            var conventions = new ConventionBuilder();
-            conventions.SupportEagerConstruction();
+            var conventions = new ConventionBuilder()
+                .WithEagerConstructionSupport();
+
             conventions.ForTypesMatching(t => true).Export();
 
             var configuration = new ContainerConfiguration()

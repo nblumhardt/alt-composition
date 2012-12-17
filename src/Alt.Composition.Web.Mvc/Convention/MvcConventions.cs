@@ -1,4 +1,5 @@
-﻿using System.Composition.Convention;
+﻿using System;
+using System.Composition.Convention;
 using System.Web.Mvc;
 
 namespace Alt.Composition.Convention
@@ -12,9 +13,21 @@ namespace Alt.Composition.Convention
         /// Configures conventions supporting ASP.NET MVC controllers.
         /// </summary>
         /// <param name="conventions">Convention builder to configure.</param>
+        [Obsolete("Use 'WithMvcConventions()'")]
         public static void AddDefaultMvcConventions(this ConventionBuilder conventions)
         {
+            WithMvcConventions(conventions);
+        }
+
+        /// <summary>
+        /// Configures conventions supporting ASP.NET MVC controllers.
+        /// </summary>
+        /// <param name="conventions">Convention builder to configure.</param>
+        /// <returns>Convention builder to support method chaining.</returns>
+        public static ConventionBuilder WithMvcConventions(this ConventionBuilder conventions)
+        {
             conventions.ForTypesDerivedFrom<IController>().Export();
+            return conventions;
         }
     }
 }

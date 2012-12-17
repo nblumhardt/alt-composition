@@ -29,9 +29,10 @@ namespace Alt.Composition.Hosting
                 partsAssemblies = _partAssemblies.Union(FindWebApplicationAssemblies()).ToArray();
             }
 
-            var conventions = new ConventionBuilder();
+            var conventions = new ConventionBuilder()
+                .WithMvcConventions();
+
             conventions.ForTypesUnderNamespace("Parts").Export().ExportInterfaces();
-            conventions.AddDefaultMvcConventions();
 
             var container = new ContainerConfiguration()
                 .WithDefaultConventions(conventions)

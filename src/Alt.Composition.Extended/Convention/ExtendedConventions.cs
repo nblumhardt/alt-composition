@@ -32,14 +32,27 @@ namespace Alt.Composition.Convention
         /// <summary>
         /// Configures types marked with the <see cref="EagerlyConstructedAttribute"/>.
         /// </summary>
-        /// <param name="conventions"></param>
+        /// <param name="conventions">The conventions to configure.</param>
+        [Obsolete("Use 'WithEagerConstructionSupport()'")]
         public static void SupportEagerConstruction(this ConventionBuilder conventions)
+        {
+            WithEagerConstructionSupport(conventions);
+        }
+
+        /// <summary>
+        /// Configures types marked with the <see cref="EagerlyConstructedAttribute"/>.
+        /// </summary>
+        /// <param name="conventions">The conventions to configure.</param>
+        /// <returns>Convention builder to support method chaining.</returns>
+        public static ConventionBuilder WithEagerConstructionSupport(this ConventionBuilder conventions)
         {
             if (conventions == null) throw new ArgumentNullException("conventions");
 
             conventions.ForTypesMatching(t => t.GetCustomAttributes(typeof(EagerlyConstructedAttribute), false).Any())
                 .Export(x => x.AsContractType(ExtendedHosting.EagerConstructionContract.ContractType)
                                .AsContractName(ExtendedHosting.EagerConstructionContract.ContractName));
+
+            return conventions;
         }
     }
 }

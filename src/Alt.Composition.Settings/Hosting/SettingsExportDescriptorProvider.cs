@@ -8,7 +8,28 @@ namespace Alt.Composition.Hosting
 {
     class SettingsExportDescriptorProvider : ExportDescriptorProvider
     {
-        static readonly Type[] SupportedSettingTypes = new[] { typeof(string), typeof(int), typeof(double), typeof(DateTime), typeof(TimeSpan) };
+        /// <summary>
+        /// Since <see cref="Convert"/> does not provide a 'Try' variant,
+        /// we pre-emptively constrain the settings we support to the set that
+        /// it can handle.
+        /// </summary>
+        static readonly HashSet<Type> SupportedSettingTypes = new HashSet<Type>(new[] {
+            typeof(string),
+            typeof(byte),
+            typeof(sbyte),
+            typeof(short),
+            typeof(ushort),
+            typeof(int),
+            typeof(uint),
+            typeof(long),
+            typeof(ulong),
+            typeof(float),
+            typeof(double),
+            typeof(Boolean), 
+            typeof(DateTime), 
+            typeof(TimeSpan)
+        });
+
         const string SettingKey = "SettingKey";
 
         public override IEnumerable<ExportDescriptorPromise> GetExportDescriptors(
