@@ -93,6 +93,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hosting\CompositionFilterProvider.cs" />
+    <Compile Include="Hosting\ImportCapableFilterAttributeFilterProvider.cs" />
     <Compile Include="Hosting\MvcCompositionProvider.cs" />
     <Compile Include="Convention\MvcConventions.cs" />
     <Compile Include="Internal\ComposedDependencyResolver.cs" />
