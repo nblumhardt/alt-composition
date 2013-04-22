@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Alt.Composition.Hosting
@@ -26,11 +27,18 @@ namespace Alt.Composition.Hosting
         /// <param name="controllerContext">The controller context.</param><param name="actionDescriptor">The action descriptor.</param>
         public IEnumerable<Filter> GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
         {
-            foreach (var filterType in new[] {
-                typeof(IActionFilter),
-                typeof(IAuthorizationFilter),
-                typeof(IExceptionFilter),
-                typeof(IResultFilter) })
+            return GetFilterExports().Distinct();
+        }
+
+        static IEnumerable<Filter> GetFilterExports()
+        {
+            foreach (var filterType in new[]
+            {
+                typeof (IActionFilter),
+                typeof (IAuthorizationFilter),
+                typeof (IExceptionFilter),
+                typeof (IResultFilter)
+            })
             {
                 foreach (var export in MvcCompositionProvider.CurrentRequestContext.GetExports(filterType))
                 {
