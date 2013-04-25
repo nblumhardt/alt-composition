@@ -100,4 +100,6 @@ License and Credits
 
 Available for commercial and open-source projects under MS-PL, see http://opensource.org/licenses/MS-PL. Draws from many of the samples published by Microsoft at http://mef.codeplex.com.
 
+Icon courtesy Mila Redko via http://thenounproject.com/noun/road-junction/#icon-No14323.
+
 Copyright (c) 2012 Nicholas Blumhardt.
