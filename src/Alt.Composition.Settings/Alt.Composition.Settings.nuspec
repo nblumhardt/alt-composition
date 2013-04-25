@@ -7,6 +7,7 @@
     <description>Allows parts written for System.Composition to consume settings from *.config files.</description>
     <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
     <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <iconUrl>http://nblumhardt.github.io/alt-composition/images/alt-composition-64.png</iconUrl>
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
     </dependencies>

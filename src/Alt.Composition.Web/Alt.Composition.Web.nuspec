@@ -8,6 +8,7 @@
                  ASP.NET MVC and WebAPI applications.</description>
     <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
     <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <iconUrl>http://nblumhardt.github.io/alt-composition/images/alt-composition-64.png</iconUrl>
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
       <dependency id="Alt.Composition.Web.Mvc" />

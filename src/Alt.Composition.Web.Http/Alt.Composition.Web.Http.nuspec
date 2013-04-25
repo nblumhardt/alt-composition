@@ -7,6 +7,7 @@
     <description>Provides dependency injection for ASP.NET Web API controllers.</description>
     <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
     <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <iconUrl>http://nblumhardt.github.io/alt-composition/images/alt-composition-64.png</iconUrl>
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
       <dependency id="Microsoft.AspNet.WebApi.Core" version="4.0.0" />
