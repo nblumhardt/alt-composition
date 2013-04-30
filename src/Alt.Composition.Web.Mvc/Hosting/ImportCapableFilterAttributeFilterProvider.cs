@@ -47,7 +47,7 @@ namespace Alt.Composition.Hosting
         {
             foreach (var attr in base.GetFilters(controllerContext, actionDescriptor))
             {
-                MvcCompositionProvider.CurrentRequestContext.SatisfyImports(attr);
+                MvcCompositionProvider.CurrentRequestContext.SatisfyImports(attr.Instance);
                 yield return attr;
             }
         }
