@@ -11,6 +11,7 @@
     <iconUrl>http://nblumhardt.github.io/alt-composition/images/alt-composition-64.png</iconUrl>
     <dependencies>
       <dependency id="Microsoft.Composition" version="1.0.0" />
+      <dependency id="Microsoft.AspNet.Mvc" version="4.0.0" />
       <dependency id="Alt.Composition.Web.Mvc" />
       <dependency id="Alt.Composition.Extended" />
       <dependency id="Alt.Composition.Settings" />
