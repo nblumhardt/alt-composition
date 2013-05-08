@@ -61,7 +61,7 @@ In _Global.asax_:
 CompositionProvider.AddAssembly(typeof(SomePart).Assembly);
 ```
 
-*Dialling back the opinions:*
+*Dialling back the opinions*
 
 The sub-package: `Alt.Composition.Web.Mvc` provides lower-level building blocks and can be installed directly if the default configuration or conventions are not required.
 
@@ -74,18 +74,18 @@ Provides dependency injection into controllers and filter attributes. Enables ap
 
 (1.) Install the package
 
-(2.) Create conventions and ensure they register MVC controllers. The _AddDefaultMvcConventions()_ extension method helps with this:
+(2.) Create conventions and ensure they register MVC controllers. The _WithMvcConventions()_ extension method helps with this:
 
 ```
 var conventions = new ConventionBuilder();
-conventions.AddDefaultMvcConventions();
+conventions.WithMvcConventions();
 ```
 
 (3.) Create a container, including the conventions and your MVC app's assembly:
 
 ```
 var container = new ContainerConfiguration()
-	.WithMvcConventions(conventions)
+	.WithDefaultConventions(conventions)
 	.WithAssembly(typeof(MvcApplication).Assembly)
 	.CreateContainer();
 ```
