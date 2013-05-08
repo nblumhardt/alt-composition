@@ -74,6 +74,10 @@ Provides dependency injection into controllers and filter attributes. Enables ap
 
 (1.) Install the package
 
+```
+Install-Package Alt.Composition.Web.Mvc
+```
+
 (2.) Create conventions and ensure they register MVC controllers. The _WithMvcConventions()_ extension method helps with this:
 
 ```
