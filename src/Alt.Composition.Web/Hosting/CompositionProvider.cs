@@ -5,6 +5,7 @@ using System.Composition.Hosting;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Mvc;
 using Alt.Composition.Convention;
 
 namespace Alt.Composition.Hosting
@@ -30,7 +31,8 @@ namespace Alt.Composition.Hosting
             }
 
             var conventions = new ConventionBuilder()
-                .WithMvcConventions();
+                .WithMvcConventions()
+                .WithEagerConstructionSupport();
 
             conventions.ForTypesUnderNamespace("Parts").Export().ExportInterfaces();
 
@@ -40,7 +42,11 @@ namespace Alt.Composition.Hosting
                 .WithApplicationSettings()
                 .CreateContainer();
 
-            MvcCompositionProvider.Initialize(container);            
+            MvcCompositionProvider.Initialize(container);
+            CompositionFilterProvider.Install(FilterProviders.Providers);
+            ImportCapableFilterAttributeFilterProvider.Install(FilterProviders.Providers);
+
+            container.ConstructEagerParts();
         }
 
         private static IEnumerable<Assembly> FindWebApplicationAssemblies()

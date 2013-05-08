@@ -1,18 +1,43 @@
 alt-composition
 ===============
 
-Extensions and third-party framework integration for the System.Composition container.
+Extensions and third-party framework integration for the `System.Composition` IoC container.
 
 Alt.Composition.Settings
 ------------------------
 
-Makes <appSettings> values from App.config or Web.config available for importing into parts.
+Makes `<appSettings>` values from _App.config_ or _Web.config_ available for importing into parts.
 
-    public class SomePart
-	{
-	    [Import, Setting("someKey")]
-		public int SomeSetting { get; set; }
-	}
+In App/Web.config:
+
+```
+<applicationSettings>
+	<add key="SmtpHost" value="smtp.example.com" />
+		...
+```
+
+Add the `Alt.Composition.Setting` attribute to imported properties, or to the parameters in an importing constructor:
+ 
+
+```
+public class SomePart
+{
+	[Import, Setting("someKey")]
+	public int SomeSetting { get; set; }
+}
+```
+
+To enable the feature, call `WithApplicationSettings()` on your `ContainerConfiguration`:
+
+```
+using Alt.Composition.Hosting;
+
+...
+
+var configuration = new ContainerConfiguration()
+	.WithApplicationSettings()
+	...
+```
 
 Alt.Composition.Web
 -------------------
@@ -30,21 +55,20 @@ The convention applied out of the box will match controllers, and will look for 
 
 *To add additional assemblies:*
 
-	CompositionProvider.AddAssembly(typeof(SomePart).Assembly);
+In _Global.asax_:
+
+```
+CompositionProvider.AddAssembly(typeof(SomePart).Assembly);
+```
 
 *Dialling back the opinions:*
 
-The sub-packages:
-
- * Alt.Composition.Web.Mvc
- * Alt.Composition.Web.Http (not yet implemented)
-
-Provide appropriate controller factories and can be installed directly if the default configuration or conventions are not required.
+The sub-package: `Alt.Composition.Web.Mvc` provides lower-level building blocks and can be installed directly if the default configuration or conventions are not required.
 
 Alt.Composition.Web.Mvc
 -----------------------
 
-Provides a controller factory, and eventually other integration points, with ASP.NET MVC.
+Provides dependency injection into controllers and filter attributes. Enables application setting support and eager construction out-of-the-box; see below.
 
 *Getting started:*
 
@@ -52,26 +76,34 @@ Provides a controller factory, and eventually other integration points, with ASP
 
 (2.) Create conventions and ensure they register MVC controllers. The _AddDefaultMvcConventions()_ extension method helps with this:
 
-	var conventions = new ConventionBuilder();
-	conventions.AddDefaultMvcConventions();
+```
+var conventions = new ConventionBuilder();
+conventions.AddDefaultMvcConventions();
+```
 
 (3.) Create a container, including the conventions and your MVC app's assembly:
 
-	var container = new ContainerConfiguration()
-		.WithDefaultConventions(conventions)
-		.WithAssembly(typeof(MvcApplication).Assembly)
-		.CreateContainer();
+```
+var container = new ContainerConfiguration()
+	.WithMvcConventions(conventions)
+	.WithAssembly(typeof(MvcApplication).Assembly)
+	.CreateContainer();
+```
 
 (4.) Initialize the MvcCompositionProvider:
 
-	MvcCompositionProvider.Initialize(container);
+```
+MvcCompositionProvider.Initialize(container);
+```
 
 Controllers will now be dependency injected using the container configured in (3).
 
-Alt.Composition.Web.Http
-------------------------
+ (5.) Enable filter and filter attribute injection
 
-To be implemented.
+```
+CompositionFilterProvider.Install(FilterProviders.Providers);
+ImportCapableFilterAttributeFilterProvider.Install(FilterProviders.Providers);
+```
 
 Alt.Composition.Extended
 ------------------------
@@ -80,20 +112,26 @@ Simple additions to the System.Composition API.
 
 *Eager construction:*
 
-Parts marked with _EagerlyConstructedAttribute_ can be started at container creation time:
+Parts marked with `EagerlyConstructedAttribute` can be started at container creation time:
 
-	[EagerlyConstructed]
-	public class SomePart { }
+```
+[EagerlyConstructed]
+public class SomePart { }
+```
 
 Requires a convention to be applied:
 
-	var conventions = new ConventionBuilder();
-	conventions.SupportEagerConstruction();
+```
+var conventions = new ConventionBuilder();
+conventions.SupportEagerConstruction();
+```
 
 When the container is created:
 
-	var container = ...
-	container.ConstructEagerParts();
+```
+var container = ...
+container.ConstructEagerParts();
+```
 
 License and Credits
 -------------------
@@ -102,4 +140,4 @@ Available for commercial and open-source projects under MS-PL, see http://openso
 
 Icon courtesy Mila Redko via http://thenounproject.com/noun/road-junction/#icon-No14323.
 
-Copyright (c) 2012 Nicholas Blumhardt.
+Copyright (c) 2013 Nicholas Blumhardt.
