@@ -33,16 +33,6 @@ namespace Alt.Composition.Convention
         /// Configures types marked with the <see cref="EagerlyConstructedAttribute"/>.
         /// </summary>
         /// <param name="conventions">The conventions to configure.</param>
-        [Obsolete("Use 'WithEagerConstructionSupport()'")]
-        public static void SupportEagerConstruction(this ConventionBuilder conventions)
-        {
-            WithEagerConstructionSupport(conventions);
-        }
-
-        /// <summary>
-        /// Configures types marked with the <see cref="EagerlyConstructedAttribute"/>.
-        /// </summary>
-        /// <param name="conventions">The conventions to configure.</param>
         /// <returns>Convention builder to support method chaining.</returns>
         public static ConventionBuilder WithEagerConstructionSupport(this ConventionBuilder conventions)
         {

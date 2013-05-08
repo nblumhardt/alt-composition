@@ -53,7 +53,7 @@ The convention applied out of the box will match controllers, and will look for 
  3. Add parts to the folder
  4. Add constructors to your controllers accepting parts and their interfaces as dependencies.
 
-*To add additional assemblies:*
+*To add additional assemblies*
 
 In _Global.asax_:
 
@@ -70,15 +70,15 @@ Alt.Composition.Web.Mvc
 
 Provides dependency injection into controllers and filter attributes. Enables application setting support and eager construction out-of-the-box; see below.
 
-*Getting started:*
+*Getting started*
 
 (1.) Install the package
 
 (2.) Create conventions and ensure they register MVC controllers. The _WithMvcConventions()_ extension method helps with this:
 
 ```
-var conventions = new ConventionBuilder();
-conventions.WithMvcConventions();
+var conventions = new ConventionBuilder()
+	.WithMvcConventions();
 ```
 
 (3.) Create a container, including the conventions and your MVC app's assembly:
@@ -98,7 +98,7 @@ MvcCompositionProvider.Initialize(container);
 
 Controllers will now be dependency injected using the container configured in (3).
 
- (5.) Enable filter and filter attribute injection
+ (5.) Enable filter and filter attribute injection:
 
 ```
 CompositionFilterProvider.Install(FilterProviders.Providers);
@@ -108,11 +108,11 @@ ImportCapableFilterAttributeFilterProvider.Install(FilterProviders.Providers);
 Alt.Composition.Extended
 ------------------------
 
-Simple additions to the System.Composition API.
+Simple additions to the `System.Composition` API.
 
-*Eager construction:*
+*Eager construction*
 
-Parts marked with `EagerlyConstructedAttribute` can be started at container creation time:
+Parts marked with `EagerlyConstructed` can be started at container creation time:
 
 ```
 [EagerlyConstructed]
@@ -122,8 +122,8 @@ public class SomePart { }
 Requires a convention to be applied:
 
 ```
-var conventions = new ConventionBuilder();
-conventions.SupportEagerConstruction();
+var conventions = new ConventionBuilder()
+	.WithEagerConstructionSupport();
 ```
 
 When the container is created:
