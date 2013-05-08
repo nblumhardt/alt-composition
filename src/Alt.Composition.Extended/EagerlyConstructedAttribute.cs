@@ -8,7 +8,7 @@ namespace Alt.Composition
     /// exports are requested.
     /// </summary>
     /// <remarks>Currently works only when conventions are applied.</remarks>
-    /// <seealso cref="ExtendedConventions.SupportEagerConstruction"/>
+    /// <seealso cref="ExtendedConventions.WithEagerConstructionSupport"/>
     [AttributeUsage(AttributeTargets.Class)]
     public class EagerlyConstructedAttribute : Attribute
     {
