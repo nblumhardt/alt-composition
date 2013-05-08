@@ -48,10 +48,10 @@ The convention applied out of the box will match controllers, and will look for 
 
 *Getting started*
 
- # Install the package
- # Add a /Parts folder to your ASP.NET MVC website
- # Add parts to the folder
- # Add constructors to your controllers accepting parts and their interfaces as dependencies.
+ 1. Install the package
+ 2. Add a /Parts folder to your ASP.NET MVC website
+ 3. Add parts to the folder
+ 4. Add constructors to your controllers accepting parts and their interfaces as dependencies.
 
 *To add additional assemblies:*
 
