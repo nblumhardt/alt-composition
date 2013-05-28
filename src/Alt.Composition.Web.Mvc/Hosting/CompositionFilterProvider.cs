@@ -27,24 +27,21 @@ namespace Alt.Composition.Hosting
         /// <param name="controllerContext">The controller context.</param><param name="actionDescriptor">The action descriptor.</param>
         public IEnumerable<Filter> GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
         {
-            return GetFilterExports().Distinct();
+            return GetFilterExports()
+                .Distinct()
+                .Select(export => new Filter(export, FilterScope.Action, null));
         }
 
-        static IEnumerable<Filter> GetFilterExports()
+        static IEnumerable<object> GetFilterExports()
         {
-            foreach (var filterType in new[]
-            {
-                typeof (IActionFilter),
-                typeof (IAuthorizationFilter),
-                typeof (IExceptionFilter),
-                typeof (IResultFilter)
-            })
-            {
-                foreach (var export in MvcCompositionProvider.CurrentRequestContext.GetExports(filterType))
-                {
-                    yield return new Filter(export, FilterScope.Action, null);
-                }
-            }
+            return new[]
+                   {
+                       typeof (IActionFilter),
+                       typeof (IAuthorizationFilter),
+                       typeof (IExceptionFilter),
+                       typeof (IResultFilter)
+                   }
+                .SelectMany(filterType => MvcCompositionProvider.CurrentRequestContext.GetExports(filterType));
         }
     }
 }
