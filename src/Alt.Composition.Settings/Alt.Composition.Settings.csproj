@@ -65,6 +65,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionStringAttribute.cs" />
+    <Compile Include="Hosting\ConnectionStringsExportDescriptorProvider.cs" />
     <Compile Include="Hosting\SettingsExportDescriptorProvider.cs" />
     <Compile Include="Hosting\SettingsExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
