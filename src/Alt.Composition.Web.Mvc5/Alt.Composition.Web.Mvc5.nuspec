@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Alt.Composition.Web.Mvc5</id>
+    <version>0.0.0</version>
+    <authors>Alt.Composition Contributors</authors>
+    <description>Provides dependency injection into ASP.NET MVC controllers and filter attributes.</description>
+    <projectUrl>https://github.com/nblumhardt/alt-composition/</projectUrl>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <iconUrl>http://nblumhardt.github.io/alt-composition/images/alt-composition-64.png</iconUrl>
+    <dependencies>
+      <dependency id="Microsoft.Composition" version="1.0.0" />
+      <dependency id="Microsoft.AspNet.Mvc" version="5.0.0" />
+      <dependency id="Alt.Composition.Extended" />
+    </dependencies>
+    <tags>MEF Composition IoC Dependency Injection</tags>
+  </metadata>
+  <files>
+    <file src="src\Alt.Composition.Web.Mvc5\bin\Release\Alt.Composition.Web.Mvc5.dll" target="lib\net45" />
+  </files>
+</package>
