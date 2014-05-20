@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alt.Composition.Web.Mvc", "src\Alt.Composition.Web.Mvc\Alt.Composition.Web.Mvc.csproj", "{DCA35186-2B8A-4DFF-8DD3-529F08C19113}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alt.Composition.Settings", "src\Alt.Composition.Settings\Alt.Composition.Settings.csproj", "{55458404-D74F-4576-AD9C-57B9F40884A5}"
@@ -20,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alt.Composition.Extended.Tests", "test\Alt.Composition.Extended.Tests\Alt.Composition.Extended.Tests.csproj", "{19B922AF-A650-4AA9-8395-E2895DFC5FC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alt.Settings.Tests", "test\Alt.Settings.Tests\Alt.Settings.Tests.csproj", "{B1FE0146-9937-41CB-BE6E-311FE16DCDBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alt.Composition.Web.Mvc5", "src\Alt.Composition.Web.Mvc5\Alt.Composition.Web.Mvc5.csproj", "{23DD6BE0-E212-478C-BDAB-5A7358C5864B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,10 @@ Global
 		{B1FE0146-9937-41CB-BE6E-311FE16DCDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1FE0146-9937-41CB-BE6E-311FE16DCDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1FE0146-9937-41CB-BE6E-311FE16DCDBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23DD6BE0-E212-478C-BDAB-5A7358C5864B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23DD6BE0-E212-478C-BDAB-5A7358C5864B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23DD6BE0-E212-478C-BDAB-5A7358C5864B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23DD6BE0-E212-478C-BDAB-5A7358C5864B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
